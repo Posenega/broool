@@ -9,7 +9,10 @@ axios.defaults.baseURL = "http://localhost:5000";
 export default function App() {
   const { control, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    axios.get("/openAi/assignment/");
+    axios
+      .get("/openAi/assignment/:hello")
+      .then((e) => console.log(e))
+      .catch((e) => console.log(e.toJSON()));
   };
   return (
     <View style={styles.container}>
